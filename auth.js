@@ -29,7 +29,7 @@ if(signupForm){
                 })
             }).then(()=>{
                     alert('User Created Successfully');
-                    window.location = '../HTML/login.html';
+                    window.location = '../HTML/login1.html';
                 }).catch((error)=>{
                alert('some error Happened');
            })
