@@ -77,7 +77,7 @@ if(loginForm){
                 auth.signOut().then(()=>{
                     db.collection('username').doc(user.uid).get().then(res=>{
                        alert('signout successfully as:- '+res.data().Username)
-                        window.location.replace("index.html")
+                        window.location.replace("")
                     })
                 }) .catch((error)=>{
                     alert('something happpended '+error);
