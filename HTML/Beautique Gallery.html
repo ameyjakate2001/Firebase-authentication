@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY GALLERY</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    
+    <link rel="stylesheet" href="../CSS/style.css">
+    
+
+    <style>
+        body{
+            background-image: linear-gradient( 112.1deg,  rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% );
+        }
+        .wrrapper{
+            padding: 50px 0;
+        }
+        .wrrapper h1{
+           text-align: center;
+           font-size: 30px;
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .img-area{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .single-img{
+            padding: 10px;
+            width: 40%;
+       }
+        .single-img img{
+            width: 100%;
+            height: 300px;
+       }
+        img:hover{
+            opacity: 0.5;
+            transition: 0.9s;
+            cursor: pointer;
+        }
+        .mybtn{
+            width: 120px;
+            font-size: 20px;
+            padding: 10px;
+            color: white;
+            border-radius: 30px;
+            background: rgb(131,58,180);
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            outline: 0;
+            border: 0;
+        }
+        .mybtn:focus{
+            outline: 0;
+            border: 0;
+        }
+        .mybtn:hover{
+          cursor: pointer;
+        }
+
+
+        .sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  margin-left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  outline: 0;
+             border: 0;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+.openbtn:focus {
+    outline: 0;
+             border: 0;
+}
+
+#main {
+  transition:  .5s;
+  padding: 16px;
+}
+.details{
+    padding: 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.details h3{
+     font-size: 1.2rem;
+     margin: 2 0px 0;
+}
+.details h3 span{
+     font-size: 1.6rem;
+     color: green;
+     display: block;
+     margin:5px 0;
+}
+.details h6{
+     font-size: 0.9rem;
+}
+.details h6 span{
+     font-size: 1.2rem;
+     color: green;
+     display: block;
+     margin:5px 0;
+}
+.details p span{
+     font-size: 1.2rem;
+     color: lightgreen;
+     display: block;
+     margin:5px 0;
+}
+.details p{
+    margin:20px 0;
+    color:white;
+    font-size: 0.9rem;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+ @media (max-width: 600px){
+      .single-img{
+             width: 100%;
+        }
+        .openbtn{
+            margin: 0;
+            padding: 10px;
+         
+        }
+        .openbtn:focus{
+             outline: 0;
+             border: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+
+   <div id="purn-body">
+      <div class="header">
+        <input type="checkbox" id="check" >
+        <nav class="full-navbar" style="background: transparent;">
+                <div class="navigation">
+                    <div class="logo">
+                        <a href="#" >Beautique</a>
+                    </div>
+                    
+                    <ul id="ul-parent">
+                        <li><a href="#"><span>Home</span></a></li>
+                        <li><a href="#"><span>Explore</span></a></li>
+                        <li><a href="#"><span>Product</span></a></li>
+                        <li><a href="#"><span>Bookings</span></a></li>
+                        <li><a href="#" id="logout-button"><span>SignOut</span></a></li>
+                    </ul>
+                    <label for="check" class="bar" >
+                        <span class="fas fa-bars" id="bars"></span>
+                        <span class="fas fa-times" id="times"></span>
+                    </label>
+            </div>
+        </nav>
+    </div>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div class="details">
+            <h3>Hello <span id="user-name"></span></h3>
+            <h6 >signed In as <span id="user-email"></span></h6>
+            <p >Bio:- <span id="user-bio"></span></p>
+        </div>
+      </div>
+      
+      <div id="main" style="margin-top: 30px;">
+        <button class="openbtn"  onclick="openNav()">My Profile</button>  
+      </div>
+      
+    <div class="wrrapper">
+        <h1>My Image Gallery</h1>
+        <button id="Load-button" class="mybtn" style="margin:40px 10px">Load</button>
+        <div class="img-area"></div>
+    </div>
+
+   </div>
+
+       
+ 
+   <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+        
+        <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyCGK_pwDKhzlfJRzMECtcblJXwASH5onNc",
+            authDomain: "beautiq-gallery.firebaseapp.com",
+            projectId: "beautiq-gallery",
+            storageBucket: "beautiq-gallery.appspot.com",
+            messagingSenderId: "57171324162",
+            appId: "1:57171324162:web:3daec26a051dda5a7b661b",
+            measurementId: "G-2ME35N3XXQ"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots:true});
+        </script> 
+        
+
+      
+        <script src="../auth.js"></script>
+        <script src="../JS/fetch.js"></script>
+        <script src="../JS/index.js"></script>
+</body>
+</html>

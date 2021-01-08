@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>signup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../CSS/signup.css">
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1> SignUp Form</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form id="signup-form">
+					<input class="text" type="text" id="user-username" name="Username" placeholder="Username" required="">
+					<input class="text w3lpass" id="user-bio" type="text" name="Bio" placeholder="A Little Bio" required="">
+					<input class="text email" id="signup-email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" id="signup-password" type="password" name="password" placeholder="Password" required="">
+					<!-- <input class="text w3lpass" id="signup-conform-password" type="password" name="password" placeholder="Confirm Password" required=""> -->
+					<div class="wthree-text" style="margin-top: 15px;">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="SIGNUP">
+				</form>
+				<p>Don't have an Account? <a href="login1.html"> Login Now!</a></p>
+			</div>
+		</div>
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+	
+	<script>
+	  var firebaseConfig = {
+		apiKey: "AIzaSyCGK_pwDKhzlfJRzMECtcblJXwASH5onNc",
+		authDomain: "beautiq-gallery.firebaseapp.com",
+		projectId: "beautiq-gallery",
+		storageBucket: "beautiq-gallery.appspot.com",
+		messagingSenderId: "57171324162",
+		appId: "1:57171324162:web:3daec26a051dda5a7b661b",
+		measurementId: "G-2ME35N3XXQ"
+	  };
+	  firebase.initializeApp(firebaseConfig);
+
+	
+	  const auth = firebase.auth();
+	  const db = firebase.firestore();
+	  db.settings({ timestampsInSnapshots:true});
+	</script> 
+	
+	<script src="../auth.js"></script>
+	<script src="../JS/index.js"></script>
+
+
+</body>
+</html>

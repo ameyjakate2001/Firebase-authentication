@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Bg image</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+
+  <div class="root">
+
+    <div class="full-container">
+        <input type="checkbox" id="check" >
+
+            <nav class="full-navbar">
+                    <div class="navigation">
+                        <div class="logo">
+                            <a href="#" >Beautique</a>
+                        </div>
+                        
+                        <ul>
+                            <li><a href="#"><span>Home</span></a></li>
+                            <li><a href="#"><span>Explore</span></a></li>
+                            <li><a href="#"><span>Product</span></a></li>
+                            <li><a href="#"><span>Bookings</span></a></li>
+                            <li><a href="/HTML/login1.html"><span>Sign in</span></a></li>
+                        </ul>
+                        <label for="check" class="bar" >
+                            <span class="fas fa-bars" id="bars"></span>
+                            <span class="fas fa-times" id="times"></span>
+                        </label>
+                </div>
+            </nav>
+
+         <div class="main-content">
+             <div class="containerr mid">
+                 <div class="row">
+                     <div class="col-md-6 hidden-sm hidden-xs">
+                         <div class="image-div"></div>
+                     </div>
+                     <div class="col-md-6 col-sm-12 col-xs-12 intro-title">
+                        <div class="content text-white">
+                        <h1>Akshara Parlour</h1>
+                            <p id="p">Hey Hi i am Akshara Jakate.Expert In Spa and Hair-color.So if You want to spa then makes sure to Contact Me.</p>
+                            <a href="/HTML/signup.html" class="sign-up-btn text-white ">Create Account</a>
+                           
+                        </div> 
+                     </div>
+                 </div>
+             </div>
+         </div>
+        </div>
+    
+  </div>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyCGK_pwDKhzlfJRzMECtcblJXwASH5onNc",
+    authDomain: "beautiq-gallery.firebaseapp.com",
+    projectId: "beautiq-gallery",
+    storageBucket: "beautiq-gallery.appspot.com",
+    messagingSenderId: "57171324162",
+    appId: "1:57171324162:web:3daec26a051dda5a7b661b",
+    measurementId: "G-2ME35N3XXQ"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  db.settings({ timestampsInSnapshots:true});
+</script>
+
+<!-- <script src="/index.js"></script> -->
+<script src="/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css"  href="../CSS/login.css">
+</head>
+<body>
+	<header>
+		<form id="login-form" class="main-header">
+			<h1>Logging</h1>
+			<hr>
+			
+			<h3>Welcome to Daily Akshara Beautque</h3>
+			<h6 class="forgot-password"></h6>
+			<input type="email"  placeholder="Email" name="email" id="login-email" autocomplete="on"  size="30" required>
+			<input type="password" id="login-password" name="password" placeholder="Password" autocomplete="on" minlength="6" required>
+			<p><button type="submit">Login</button></p>
+			<div class="text-center p-t-12">
+				<span class="txt1">
+					Forgot
+				</span>
+				<a class="txt2" href="#">
+					Username / Password?
+				</a>
+			</div>
+			<div class="text-center" style="margin-bottom: 10px;">
+				<a class="txt2" href="signup.html">
+					Create your Account
+					<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+				</a>
+			</div>
+		</form>
+	</header>
+
+
+
+
+
+
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+	
+	<script>
+	  var firebaseConfig = {
+		apiKey: "AIzaSyCGK_pwDKhzlfJRzMECtcblJXwASH5onNc",
+		authDomain: "beautiq-gallery.firebaseapp.com",
+		projectId: "beautiq-gallery",
+		storageBucket: "beautiq-gallery.appspot.com",
+		messagingSenderId: "57171324162",
+		appId: "1:57171324162:web:3daec26a051dda5a7b661b",
+		measurementId: "G-2ME35N3XXQ"
+	  };
+	  firebase.initializeApp(firebaseConfig);
+
+	
+	  const auth = firebase.auth();
+	  const db = firebase.firestore();
+	  db.settings({ timestampsInSnapshots:true});
+	</script> 
+	
+	<script src="../auth.js"></script>
+	<script src="../JS/index.js"></script>
+</body>
+</html>
