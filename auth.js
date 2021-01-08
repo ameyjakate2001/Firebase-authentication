@@ -77,7 +77,7 @@ if(loginForm){
                 auth.signOut().then(()=>{
                     db.collection('username').doc(user.uid).get().then(res=>{
                        alert('signout successfully as:- '+res.data().Username)
-                        window.location.replace("")
+                        window.location.replace("firebase authentication/index.html");
                     })
                 }) .catch((error)=>{
                     alert('something happpended '+error);
