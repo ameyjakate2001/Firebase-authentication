@@ -22,7 +22,7 @@ if(resetPassword){
              const sendLinkMsg = document.querySelector('#sent-link');
              sendLinkMsg.innerHTML = 'Passord Link send successfully';
              setTimeout(() => {
-                window.location.replace("HTML/login1.html")
+                window.location.replace("login1.html")
              }, 2000);
             
           }).catch(function(error) {
