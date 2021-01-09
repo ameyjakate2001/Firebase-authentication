@@ -11,6 +11,28 @@ auth.onAuthStateChanged((user)=>{
 });
 
 
+//Sending Reset Password Link
+const resetPassword = document.querySelector('.send-btn');
+if(resetPassword){
+    resetPassword.addEventListener('click',(e)=>{
+        e.preventDefault();
+        const myresetEmail = document.querySelector('#forgot').value;
+        console.log(myresetEmail);
+        auth.sendPasswordResetEmail(myresetEmail).then(function() {
+             const sendLinkMsg = document.querySelector('#sent-link');
+             sendLinkMsg.innerHTML = 'Passord Link send successfully';
+             setTimeout(() => {
+                window.location.replace("HTML/login1.html")
+             }, 2000);
+            
+          }).catch(function(error) {
+              console.log('error happended:- '+error.message);
+          });
+    })
+}    
+
+
+
 
 
 
