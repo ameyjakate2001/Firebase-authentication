@@ -6,6 +6,7 @@ auth.onAuthStateChanged((user)=>{
    }
    else{
        console.log('he bye');
+           GalleryUI();
    }
 });
 
@@ -23,17 +24,22 @@ if(signupForm){
            const email = signupForm['signup-email'].value;
            const password = signupForm['signup-password'].value;
            auth.createUserWithEmailAndPassword(email, password).then((cred)=>{
-               return db.collection('username').doc(cred.user.uid).set({
+            cred.user.sendEmailVerification().then(function() {
+                console.log('verification link sent');
+                return db.collection('username').doc(cred.user.uid).set({
                     Bio:signupForm['user-bio'].value,
                     Username:signupForm['user-username'].value
                 })
             }).then(()=>{
                     alert('User Created Successfully');
                     window.location = '../HTML/login1.html';
-                }).catch((error)=>{
-               alert('some error Happened');
-           })
-    })
+                })
+              })
+               .catch((error)=>{
+                    alert('The User already Exists Please try another with another emailID:- '+error.message)
+                })
+                    
+     });
 }
 
 
@@ -50,20 +56,21 @@ if(loginForm){
       
         // log the user in
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
-            var user = auth.currentUser;
-            if(user){
-                alert('logged in successfully as:- '+email);
-                window.location.replace("../HTML/Beautique Gallery.html");
+            if(cred.user.emailVerified){
+                    alert('logged in successfully as:- '+email);
+                    // LoginGallery();
+                    window.location.replace("../HTML/Beautique Gallery.html");
             }
             else{
-                setupUI();
+                alert('Please verify your EmailID sent to your address');
             }
     }).catch((error)=>{
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert('some happened'+err);
-    })
-});
+          alert('Wrong password or EmailID :- '+errorMessage);
+        console.log(error);
+        })
+    });
 }
 
 
@@ -76,8 +83,8 @@ if(loginForm){
                 console.log('user signed in');
                 auth.signOut().then(()=>{
                     db.collection('username').doc(user.uid).get().then(res=>{
-                       alert('signout successfully as:- '+res.data().Username)
-                        window.location.replace("../index.html");
+                       alert('signout successfully as:- '+res.data().Username); 
+                           window.location.replace("../index.html")
                     })
                 }) .catch((error)=>{
                     alert('something happpended '+error);
