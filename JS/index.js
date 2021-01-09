@@ -9,3 +9,8 @@ let setupUI = (user)=>{
            userBio.innerHTML =  res.data().Bio;
        })
 }
+
+const purnBody = document.querySelector('#purn-body');
+let GalleryUI = ()=>{
+    purnBody.innerHTML = 'Restricted user Please '+ `<a href="../HTML/login1.html">Login</a>` +' to see this page'
+}
